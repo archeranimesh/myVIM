@@ -52,3 +52,21 @@ endif
 set cursorline      " Show visual line under the curson.
 set showmatch       " show the matching part of the pair [], {}, ()
 " Tab Settings END
+
+
+" https://dougblack.io/words/a-good-vimrc.html START
+filetype indent on      " load filetype-specific indent files"
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
+set ignorecase          " Ignore case when searching
+set number              " show line numbers"
+set showcmd             " show command in bottom bar"
+set wildmenu            " visual autocomplete for command menu"
+set lazyredraw          " redraw only when we need to."
+" move vertically by visual line
+nnoremap j gj
+nnoremap k gk
+" turn off search highlight
+nnoremap <leader><space> :nohlsearch<CR>
+
+" https://dougblack.io/words/a-good-vimrc.html END
