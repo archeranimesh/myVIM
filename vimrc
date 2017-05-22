@@ -48,4 +48,7 @@ if has("autocmd")
 	filetype plugin indent on
 	" Use actual tab chars in Makefiles.
 	autocmd FileType make set tabstop=8 shiftwidth=8 softtabstop=0 noexpandtab
+endif    
+set cursorline      " Show visual line under the curson.
+set showmatch       " show the matching part of the pair [], {}, ()
 " Tab Settings END
