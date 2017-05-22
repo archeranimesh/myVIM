@@ -35,6 +35,18 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " NerdTree Configuration end
+" Stop Key movement with arrow key
+"http://stackoverflow.com/questions/5367760/vim-disabling-the-cursor-arrow-keys-but-only-for-navigation
+" Disable Arrow keys in Escape mode
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+" Disable Arrow keys in Insert mode
+imap <up> <nop>
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
 
 " Tab Settings START
 " http://stackoverflow.com/questions/234564/tab-key-4-spaces-and-auto-indent-after-curly-braces-in-vim
@@ -70,3 +82,44 @@ nnoremap k gk
 nnoremap <leader><space> :nohlsearch<CR>
 
 " https://dougblack.io/words/a-good-vimrc.html END
+" No annoying sound on errors
+" https://github.com/amix/vimrc/blob/master/vimrcs/basic.vim
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
+
+" Add a bit extra margin to the left
+set foldcolumn=1
+" Use Unix as the standard file type
+set ffs=unix,dos,mac
+
+" Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup
+set nowb
+set noswapfile
+
+
+" Ctrl+s to save a File, additonally one more change in bashrc
+nmap <c-s> :w<CR>
+imap <c-s> <Esc>:w<CR>a
+
+" Set color
+" https://github.com/jnurmine/Zenburn
+set t_Co=256
+colors zenburn
+" https://www.youtube.com/watch?v=YhqsjUUHj6g
+" http://vim.wikia.com/wiki/Accessing_the_system_clipboard
+set clipboard=unnamed
+set clipboard=unnamedplus       "This works.
+" BackSpace works.
+set bs=2
+" http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste
+
+" https://vi.stackexchange.com/questions/2674/how-can-i-easily-move-a-line
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
